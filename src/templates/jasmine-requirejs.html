@@ -27,8 +27,13 @@
   <script src="<%= script %>"></script>
   <% }) %>
   <% }; %>
+	<script src="/js/lib/jasmine-reporters/src/jasmine.teamcity_reporter.js"></script>
 
   <script>
+		var j = jasmine.getEnv();
+		j.addReporter(new jasmine.TeamcityReporter());
+		//	  j.addReporter(new jasmine.TrivialReporter());
+
     <% if (options.mainRequireConfig) { %>
       require.config(<%= serializeRequireConfig(options.mainRequireConfig) %>);
     <% } %>
