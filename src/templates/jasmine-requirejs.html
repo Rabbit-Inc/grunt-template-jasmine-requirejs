@@ -31,10 +31,6 @@
   <script src="/js/lib/jasmine.async/lib/jasmine.async.js"></script>
 
   <script>
-		var j = jasmine.getEnv();
-		j.addReporter(new jasmine.TeamcityReporter());
-		//	  j.addReporter(new jasmine.TrivialReporter());
-
     <% if (options.mainRequireConfig) { %>
       require.config(<%= serializeRequireConfig(options.mainRequireConfig) %>);
     <% } %>
@@ -96,5 +92,6 @@
   <% } %>
 </head>
 <body>
+  <div id="rabbitapp"></div>
 </body>
 </html>
