@@ -31,6 +31,8 @@
   <script src="/js/lib/jasmine.async/lib/jasmine.async.js"></script>
 
   <script>
+    jasmine.getEnv().addReporter(new jasmine.TeamcityReporter());
+
     <% if (options.mainRequireConfig) { %>
       require.config(<%= serializeRequireConfig(options.mainRequireConfig) %>);
     <% } %>
